@@ -570,7 +570,7 @@ video {
   display: flex;
   align-items: flex-end;
 }
-.bt-view {
+.bt-vm {
   border: none;
   color: rgba(0, 0, 0, 0.5);
   background-color: transparent;
@@ -583,12 +583,12 @@ video {
   transition: 0.3s;
   cursor: pointer;
 }
-.bt-view:hover {
+.bt-vm:hover {
   color: rgb(255, 255, 255);
   border-color: rgb(180, 0, 0);
   background-color: rgb(200, 0, 0);
 }
-.bt-view:active {
+.bt-vm:active {
   background-color: rgb(86, 0, 0);
 }
 
