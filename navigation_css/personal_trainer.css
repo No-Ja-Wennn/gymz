@@ -286,11 +286,16 @@ video {
   text-transform: uppercase;
   font-style: italic;
   color: rgb(0, 0, 0);
-  transition: 0.5s;
+  transition: 0.2s;
 }
 #button1:hover {
   border: 1px rgb(190, 0, 0) solid;
   background-color: rgb(200, 0, 0);
+  color: rgb(255, 255, 255);
+}
+#button1:active {
+  border: 1px rgb(190, 0, 0) solid;
+  background-color: rgb(100, 0, 0);
   color: rgb(255, 255, 255);
 }
 .cheer__colum__two {
@@ -307,22 +312,46 @@ video {
   object-fit: cover;
 }
 .form {
-  max-width: 800px;
-  width: 100%;
+  /* max-width: 800px;
+  width: 100%; */
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* transform: translate(-50%, -50%); */
   display: none;
   justify-content: center;
   align-items: center;
   /* background-color: green; */
   z-index: 999;
+  background-color: rgb(255, 255, 255);
 }
+
 .form__select {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+@keyframes fly-to-bot{
+    0%{
+        margin-top: 0px;
+        opacity: 1;
+    }
+    100%{
+        margin-top: 100px;
+        opacity: 0;
+    }
+}
+@keyframes fly-to-top{
+    0%{
+        margin-top: 100px;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 0;
+        opacity: 1;
+    }
 }
 .form ul {
   max-width: 400px;
@@ -332,7 +361,7 @@ video {
   align-items: center;
   background-color: white;
   border-radius: 20px;
-  box-shadow: 0 0 100px 1000px rgb(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
 }
 .form li {
   height: 80px;
@@ -369,6 +398,7 @@ video {
   font-size: 16px;
   cursor: pointer;
   color: rgb(0, 0, 0, 0.3);
+  transition: .3s;
 }
 .cancel:hover {
   color: rgb(0, 0, 0);
@@ -570,7 +600,7 @@ video {
   display: flex;
   align-items: flex-end;
 }
-.bt-vm {
+.bt-view {
   border: none;
   color: rgba(0, 0, 0, 0.5);
   background-color: transparent;
@@ -583,12 +613,12 @@ video {
   transition: 0.3s;
   cursor: pointer;
 }
-.bt-vm:hover {
+.bt-view:hover {
   color: rgb(255, 255, 255);
   border-color: rgb(180, 0, 0);
   background-color: rgb(200, 0, 0);
 }
-.bt-vm:active {
+.bt-view:active {
   background-color: rgb(86, 0, 0);
 }
 
@@ -1057,17 +1087,6 @@ video {
 
 
 
-@keyframes fly_in{
-    0%{
-        margin-top: 150px;
-        opacity: 0;
-    }
-    100%{
-        margin-top: 50px;
-        opacity: 1;
-    }
-}
-
 .information{
     display: none;
     position: fixed;
@@ -1083,16 +1102,34 @@ video {
     /* scrollbar */
     overflow: auto;
     /* IE and Edge */
-    /* -ms-overflow-style: none;  
-    scrollbar-width: none; */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
     /* transition: 1s; */
 }
-/* body{
-    overflow: hidden;
-} */
-/* .information::-webkit-scrollbar{
+.information::-webkit-scrollbar{
     display: none;
-} */
+}
+
+@keyframes fly-top{
+    0%{
+        margin-top: 150px;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 50px;
+        opacity: 1;
+    }
+}
+@keyframes fly-bot{
+    0%{
+        margin-top: 50px;
+        opacity: 1;
+    }
+    100%{
+        margin-top: 150px;
+        opacity: 0;
+    }
+}
 .group-colum{
     max-width: 1000px;
     width: 90%;
@@ -1104,7 +1141,6 @@ video {
     position: relative;
     border-radius: 15px;
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
-    animation: fly_in .5s ease-in-out forwards;
 }
 .colum-img{
     width: 35%;
@@ -1113,7 +1149,7 @@ video {
 }
 .cancel-if{
     width: 100%;
-    height: 105px;
+    height: 120px;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
