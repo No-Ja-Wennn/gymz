@@ -333,25 +333,25 @@ video {
   display: flex;
   justify-content: center;
 }
-@keyframes fly-to-bot{
-    0%{
-        margin-top: 0px;
-        opacity: 1;
-    }
-    100%{
-        margin-top: 100px;
-        opacity: 0;
-    }
+@keyframes fly-to-bot {
+  0% {
+    margin-top: 0px;
+    opacity: 1;
+  }
+  100% {
+    margin-top: 100px;
+    opacity: 0;
+  }
 }
-@keyframes fly-to-top{
-    0%{
-        margin-top: 100px;
-        opacity: 0;
-    }
-    100%{
-        margin-top: 0;
-        opacity: 1;
-    }
+@keyframes fly-to-top {
+  0% {
+    margin-top: 100px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
 }
 .form ul {
   max-width: 400px;
@@ -398,7 +398,7 @@ video {
   font-size: 16px;
   cursor: pointer;
   color: rgb(0, 0, 0, 0.3);
-  transition: .3s;
+  transition: 0.3s;
 }
 .cancel:hover {
   color: rgb(0, 0, 0);
@@ -1085,162 +1085,160 @@ video {
   }
 }
 
-
-
-.information{
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgb(255, 255, 255);
-    z-index: 1;
-    margin-top: 68px;
-    /* display: flex; */
-    justify-content: center;
-    /* scrollbar */
-    overflow: auto;
-    /* IE and Edge */
-    -ms-overflow-style: none;  
-    scrollbar-width: none;
-    /* transition: 1s; */
+.information {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  z-index: 1;
+  margin-top: 68px;
+  /* display: flex; */
+  justify-content: center;
+  /* scrollbar */
+  overflow: auto;
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  /* transition: 1s; */
 }
-.information::-webkit-scrollbar{
-    display: none;
+.information::-webkit-scrollbar {
+  display: none;
 }
 
-@keyframes fly-top{
-    0%{
-        margin-top: 150px;
-        opacity: 0;
-    }
-    100%{
-        margin-top: 50px;
-        opacity: 1;
-    }
+@keyframes fly-top {
+  0% {
+    margin-top: 150px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 50px;
+    opacity: 1;
+  }
 }
-@keyframes fly-bot{
-    0%{
-        margin-top: 50px;
-        opacity: 1;
-    }
-    100%{
-        margin-top: 150px;
-        opacity: 0;
-    }
+@keyframes fly-bot {
+  0% {
+    margin-top: 50px;
+    opacity: 1;
+  }
+  100% {
+    margin-top: 150px;
+    opacity: 0;
+  }
 }
-.group-colum{
-    max-width: 1000px;
-    width: 90%;
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    background-color: rgb(255, 255, 255);
-    margin: 50px 0;
-    position: relative;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+.group-colum {
+  max-width: 1000px;
+  width: 90%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  margin: 50px 0;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
 }
-.colum-img{
-    width: 35%;
-    padding: 15px 15px 15px 30px;
-    /* margin-top: 105px; */
+.colum-img {
+  width: 35%;
+  padding: 15px 15px 15px 30px;
+  /* margin-top: 105px; */
 }
-.cancel-if{
-    width: 100%;
-    height: 120px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+.cancel-if {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
-.cancel-if i{
-    font-size: 18px;
-    color: rgb(0, 0, 0, 0.3);
-    cursor: pointer;
-    transition: .3s;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.cancel-if i {
+  font-size: 18px;
+  color: rgb(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: 0.3s;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.cancel-if i:hover{
-    color: rgb(0, 0, 0);
+.cancel-if i:hover {
+  color: rgb(0, 0, 0);
 }
 
-.colum-img img{
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
+.colum-img img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
 }
-.colum-information{
-    width: 65%;
-    padding: 15px 30px 15px 15px;
+.colum-information {
+  width: 65%;
+  padding: 15px 30px 15px 15px;
 }
-.trainer-name{
-    min-height: 80px;
-    font-size: 26px;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0;
-    text-align: center;
+.trainer-name {
+  min-height: 80px;
+  font-size: 26px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  text-align: center;
 }
-.trainer-name span{
-    text-transform: none;
-    font-size: 24px;
-    margin-top: 10px;
+.trainer-name span {
+  text-transform: none;
+  font-size: 24px;
+  margin-top: 10px;
 }
-.speech{
-    /* background-color: goldenrod; */
-    width: fit-content;
+.speech {
+  /* background-color: goldenrod; */
+  width: fit-content;
 }
-.speech h3{
-    font-size: 18px;
-    font-weight: 600;
-    padding: 15px 0;
+.speech h3 {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 0;
 }
-.speech p{
-    font-size: 18px;
-    padding: 15px 0;
-    color: rgb(0, 0, 0, 0.8);
+.speech p {
+  font-size: 18px;
+  padding: 15px 0;
+  color: rgb(0, 0, 0, 0.8);
 }
 @media screen and (max-width: 768px) {
-    .group-colum{
-        flex-direction: column;
-    }
-    .colum-img{
-        width: 100%;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .cancel-if{
-        height: 30px;
-    }
-    .colum-img img{
-        width: 80%;
-    }
-    .colum-information{
-        width: 100%;
-        padding: 8%;
-        text-align: justify;
-    }
+  .group-colum {
+    flex-direction: column;
+  }
+  .colum-img {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .cancel-if {
+    height: 30px;
+  }
+  .colum-img img {
+    width: 80%;
+  }
+  .colum-information {
+    width: 100%;
+    padding: 8%;
+    text-align: justify;
+  }
 }
 @media screen and (max-width: 428px) {
-    .trainer-name{
-        font-size: 22px !important;
-    }
-    .trainer-name span{
-        font-size: 20px !important;
-    }
-    .colum-information h3{
-        font-size: 16px !important;
-    }
-    .colum-information p{
-        font-size: 16px !important;
-    }
+  .trainer-name {
+    font-size: 22px !important;
+  }
+  .trainer-name span {
+    font-size: 20px !important;
+  }
+  .colum-information h3 {
+    font-size: 16px !important;
+  }
+  .colum-information p {
+    font-size: 16px !important;
+  }
 }

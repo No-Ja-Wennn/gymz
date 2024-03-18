@@ -370,7 +370,7 @@ function loadTaskBarMessage() {
                     liElement.className = "message__user";
                     liElement.innerHTML = `
                 <div class="message__user__box">
-                    <img src="../img/services/coach/img4.jpg" alt="" class="message__user__avt">
+                <img src="/img/icon/avatar__ico.jpg" alt="" class="message__user__avt">
                     <div class="message__user__box__right">
                         <span class="message__user__name">
                             ${loginData.accounts[j].name}
@@ -455,7 +455,7 @@ function loadNewTaskBarMessage() {
                         liElement.className = "message__user";
                         liElement.innerHTML = `
                     <div class="message__user__box">
-                        <img src="../img/services/coach/img4.jpg" alt="" class="message__user__avt">
+                    <img src="/img/icon/avatar__ico.jpg" alt="" class="message__user__avt">
                         <div class="message__user__box__right">
                             <span class="message__user__name">
                                 ${loginData.accounts[j].name}
