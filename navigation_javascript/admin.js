@@ -228,11 +228,11 @@ function activeLogin() {
                 itemsBox[j].classList.remove('container__bar__item--active');
             }
             this.classList.add('container__bar__item--active');
-            setTimeout(function(){
-                console.log('hide');
+            setTimeout(function () {
+                // console.log('hide');
                 navigation.style.animation = 'fly-out-left .35s ease-in-out forwards';
                 shadow.style.animation = 'shadow-out .35s ease-in-out forwards';
-                setTimeout(function() {
+                setTimeout(function () {
                     navigation.style.display = 'none';
                     btshow.innerHTML = '<i class="fa-solid fa-bars"></i>';
                     shadow.style.display = 'none';
@@ -353,6 +353,8 @@ window.onload = function () {
     loadTaskBarMessage();
 }
 
+let oldOptionClick;
+
 function loadTaskBarMessage() {
     //load mesage historyMessage.messages[i].id
     var historyMessage = JSON.parse(localStorage.getItem('historyMessage'));
@@ -409,15 +411,16 @@ function loadTaskBarMessage() {
                     var iconOptionMessage = liElement.querySelector(".message__user__name__options");
                     iconOptionMessage.addEventListener("click", function () {
                         lastestIconOptionMessage = this
-                        console.log(this)
+                        // console.log(this)
                         var optionElement = this.parentElement.parentElement.parentElement.querySelector(".message__user__box__affter");
                         showNowRemoveElement = optionElement
 
-                        let displaytrash = optionElement;
+                        var displaytrash = optionElement;
                         let displaylist = optionElement.querySelector('.message__user__box__affter__list');
-                        // event.stopPropagation();
+                        event.stopPropagation();
+
                         if (displaytrash.style.display === 'none' || displaytrash.style.display === '') {
-                            console.log('show trash1')
+                            // console.log('show trash1')
                             displaytrash.style.display = 'flex';
                             displaytrash.style.animation = 'showtrash .35s ease-in-out forwards';
                             setTimeout(function () {
@@ -433,25 +436,33 @@ function loadTaskBarMessage() {
                                 }, 350)
                             }, 50)
                         }
-                        
+
 
                         // ẩn thanh xóa
-                        console.log("hẹllo")
+                        if (oldOptionClick && oldOptionClick != this.parentElement) {
+                            var displaytrash1 = oldOptionClick.parentElement.parentElement.querySelector(".message__user__box__affter");
+                            displaytrash1.style.animation = 'hidetrash .35s ease-in-out forwards';
+                            displaytrash1.style.animation = 'hidetrash .35s ease-in-out forwards';
+                            setTimeout(function () {
+                                displaytrash1.style.display = 'none';
+                            }, 350)
+                        }
 
-                        displayNoneAllOption();
                         if (optionElement.style.display == "block")
-                            optionElement.style.display = "none"
+                            optionElement.style.display = "none";
                         else
-                            optionElement.style.display = "flex"
+                            optionElement.style.display = "flex";
 
+                        oldOptionClick = this.parentElement;
                         var removeMessageElement = showNowRemoveElement.querySelector(".message__user__box__affter__item")
                         removeMessageElement.addEventListener("click", () => {
+                            console.log("hellooo")
                             var parentRremove = removeMessageElement.parentElement.parentElement.parentElement
                             var idMessageRemove = parentRremove.
                                 querySelector(".message__user__msg__text").innerHTML;
                             var a_liE = document.querySelectorAll(".message__user");
                             a_liE = Array.from(a_liE)
-                            a_liE.map(value => { value.classList.remove("message__user--active") })
+                            a_liE.map(value => { value.classList.remove("message__user--active1") })
                             // remove from database
                             var historyMessage = JSON.parse(localStorage.getItem('historyMessage'));
                             historyMessage.messages = historyMessage.messages.filter((value) => {
@@ -557,6 +568,19 @@ function loadNewTaskBarMessage() {
                                 }, 50)
                             }
 
+                            // ẩn thanh xóa
+                            if (oldOptionClick && oldOptionClick != this.parentElement) {
+                                var displaytrash1 = oldOptionClick.parentElement.parentElement.querySelector(".message__user__box__affter");
+                                displaylist = displaytrash1.querySelector(".message__user__box__affter__list");
+                                displaylist.style.animation = 'hidelist .1s ease-in-out forwards';
+                                console.log(displaylist);
+                                displaytrash1.style.animation = 'hidetrash .35s ease-in-out forwards';
+                                setTimeout(function () {
+                                    displaytrash1.style.display = 'none';
+                                }, 350)
+                            }
+                            oldOptionClick = this.parentElement;
+
                             var removeMessageElement = showNowRemoveElement.querySelector(".message__user__box__affter__item")
                             removeMessageElement.addEventListener("click", () => {
                                 var parentRremove = removeMessageElement.parentElement.parentElement.parentElement
@@ -564,7 +588,7 @@ function loadNewTaskBarMessage() {
                                     querySelector(".message__user__msg__text").innerHTML;
                                 var a_liE = document.querySelectorAll(".message__user");
                                 a_liE = Array.from(a_liE)
-                                a_liE.map(value => { value.classList.remove("message__user--active") })
+                                a_liE.map(value => { value.classList.remove("message__user--active1") })
                                 // remove from database
                                 var historyMessage = JSON.parse(localStorage.getItem('historyMessage'));
                                 historyMessage.messages = historyMessage.messages.filter((value) => {
@@ -602,7 +626,7 @@ function activeFirstMessage() {
             a_liE = Array.from(a_liE)
             a_liE.map(value => { value.classList.remove("message__user--active1") })
             listMessageTitle[0].classList.add("message__user--active1");
-            
+
 
 
             var titleUser = document.querySelector(".chatbox__head__title");
@@ -621,8 +645,8 @@ function handleClick() {
     this.classList.add("message__user--active1");
     var titleUser = document.querySelector(".chatbox__head__title");
     titleUser.innerText = this.querySelector(".message__user__name").innerText;
-    console.log('show message');
-    setTimeout(function(){
+    // console.log('show message');
+    setTimeout(function () {
         scrollRight();
     }, 200);
     // scrollRight();
@@ -632,31 +656,32 @@ function displayNoneAllOption() {
     var a_optionElement = document.querySelectorAll(".message__user__box__affter")
     a_optionElement = Array.from(a_optionElement)
     a_optionElement.map(value => {
-        value.style.display = "none"
+        value.style.display = "none";
     })
 }
 
 let lastestIconOptionMessage;
 let showNowRemoveElement;
 
-document.addEventListener('click', function (event) {
-    // var myElement = document.getElementById('myElement');
-    if (lastestIconOptionMessage && showNowRemoveElement)
-        if (event.target !== lastestIconOptionMessage && event.target !== showNowRemoveElement) {
-            var a_optionElement = document.querySelectorAll(".message__user__box__affter")
-            a_optionElement = Array.from(a_optionElement)
-            a_optionElement.map(value => {
-                console.log('hide click tum lum');
-                displaylist.style.animation = 'hidelist .1s ease-in-out forwards';
-                setTimeout(function(){
-                value.style.animation = 'hidetrash .35s ease-in-out forwards';
-                    setTimeout(function(){
-                        value.style.display = 'none';
-                    }, 350)
-                }, 50)
-            })
-        }
-});
+// document.addEventListener('click', function (event) {
+//     // var myElement = document.getElementById('myElement');
+//     if (lastestIconOptionMessage && showNowRemoveElement)
+//         if (event.target !== lastestIconOptionMessage && event.target !== showNowRemoveElement) {
+//             var a_optionElement = document.querySelectorAll(".message__user__box__affter")
+//             a_optionElement = Array.from(a_optionElement)
+//             a_optionElement.map(value => {
+//                 console.log('hide click tum lum');
+//                 if (displaylist)
+//                     displaylist.style.animation = 'hidelist .1s ease-in-out forwards';
+//                 setTimeout(function () {
+//                     value.style.animation = 'hidetrash .35s ease-in-out forwards';
+//                     setTimeout(function () {
+//                         value.style.display = 'none';
+//                     }, 350)
+//                 }, 50)
+//             })
+//         }
+// });
 
 // check save on active // khongbiet vie t gi day nua
 function checkValidSave(valueActive, flagConsole = true) {
