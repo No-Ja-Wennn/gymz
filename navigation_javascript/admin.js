@@ -228,6 +228,16 @@ function activeLogin() {
                 itemsBox[j].classList.remove('container__bar__item--active');
             }
             this.classList.add('container__bar__item--active');
+            setTimeout(function(){
+                console.log('hide');
+                navigation.style.animation = 'fly-out-left .35s ease-in-out forwards';
+                shadow.style.animation = 'shadow-out .35s ease-in-out forwards';
+                setTimeout(function() {
+                    navigation.style.display = 'none';
+                    btshow.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                    shadow.style.display = 'none';
+                }, 500);
+            }, 500);
         });
     }
     messageForm.style.display = "block";
@@ -405,6 +415,7 @@ function loadTaskBarMessage() {
 
                         let displaytrash = optionElement;
                         let displaylist = optionElement.querySelector('.message__user__box__affter__list');
+                        // event.stopPropagation();
                         if (displaytrash.style.display === 'none' || displaytrash.style.display === '') {
                             console.log('show trash1')
                             displaytrash.style.display = 'flex';
@@ -422,7 +433,7 @@ function loadTaskBarMessage() {
                                 }, 350)
                             }, 50)
                         }
-
+                        
                         displayNoneAllOption();
                         if (optionElement.style.display == "block")
                             optionElement.style.display = "none"
@@ -523,6 +534,7 @@ function loadNewTaskBarMessage() {
 
                             let displaytrash = optionElement;
                             let displaylist = optionElement.querySelector('.message__user__box__affter__list');
+                            // event.stopPropagation();
                             if (displaytrash.style.display === 'none' || displaytrash.style.display === '') {
                                 console.log('show trash1')
                                 displaytrash.style.display = 'flex';
@@ -584,8 +596,9 @@ function activeFirstMessage() {
             loadMessage();
             var a_liE = document.querySelectorAll(".message__user");
             a_liE = Array.from(a_liE)
-            a_liE.map(value => { value.classList.remove("message__user--active") })
-            listMessageTitle[0].classList.add("message__user--active");
+            a_liE.map(value => { value.classList.remove("message__user--active1") })
+            listMessageTitle[0].classList.add("message__user--active1");
+            
 
 
             var titleUser = document.querySelector(".chatbox__head__title");
@@ -599,13 +612,16 @@ function handleClick() {
     userActive = idBox;
     loadMessage();
     var a_liE = document.querySelectorAll(".message__user");
-    a_liE = Array.from(a_liE);
-
-    a_liE.map(value => { value.classList.remove("message__user--active") })
-    this.classList.add("message__user--active");
-
+    a_liE = Array.from(a_liE)
+    a_liE.map(value => { value.classList.remove("message__user--active1") })
+    this.classList.add("message__user--active1");
     var titleUser = document.querySelector(".chatbox__head__title");
-    titleUser.innerText = this.querySelector(".message__user__name").innerText
+    titleUser.innerText = this.querySelector(".message__user__name").innerText;
+    console.log('show message');
+    setTimeout(function(){
+        scrollRight();
+    }, 200);
+    // scrollRight();
 }
 
 function displayNoneAllOption() {
@@ -615,8 +631,10 @@ function displayNoneAllOption() {
         value.style.display = "none"
     })
 }
+
 let lastestIconOptionMessage;
 let showNowRemoveElement;
+
 document.addEventListener('click', function (event) {
     // var myElement = document.getElementById('myElement');
     if (lastestIconOptionMessage && showNowRemoveElement)
@@ -624,10 +642,18 @@ document.addEventListener('click', function (event) {
             var a_optionElement = document.querySelectorAll(".message__user__box__affter")
             a_optionElement = Array.from(a_optionElement)
             a_optionElement.map(value => {
-                value.style.display = "none"
+                console.log('hide click tum lum');
+                displaylist.style.animation = 'hidelist .1s ease-in-out forwards';
+                setTimeout(function(){
+                value.style.animation = 'hidetrash .35s ease-in-out forwards';
+                    setTimeout(function(){
+                        value.style.display = 'none';
+                    }, 350)
+                }, 50)
             })
         }
 });
+
 // check save on active // khongbiet vie t gi day nua
 function checkValidSave(valueActive, flagConsole = true) {
     if (doingForm == valueActive || doingForm == "") {
