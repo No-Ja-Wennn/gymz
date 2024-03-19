@@ -50,7 +50,7 @@ body{
     background-color: #ffffff;
     padding: 8px;
     min-width: 320px;
-    z-index: 2;
+    z-index: 3;
     /* box-shadow: 0 0 1000em 1000em rgba(0, 0, 0, 0.5); */
     /* overflow: auto; */
     /* animation: fly-out-left .5s ease-in-out forwards; */
@@ -63,7 +63,7 @@ body{
     /* right: calc(-100vw); */
     width: 100vw;
     height: 100%;
-    z-index: 1;
+    z-index: 2;
     background-color: rgba(0, 0, 0, 0.5);
 }
 @keyframes shadow-in{
@@ -601,16 +601,22 @@ li.message__user.message__user:hover .message__user__name__options{
 @keyframes side-to-left{
     0%{
         margin-left: 0;
+        height: 92px;
+        opacity: 1;
     }
     100%{
         margin-left: -320px;
+        height: 92px;
+        opacity: 0;
     }
 }
 @keyframes de-height{
     0%{
-        height: 62px;
+        margin-left: -320px;
+        height: 92px;
     }
     100%{
+        margin-left: -320px;
         height: 0;
     }
 }

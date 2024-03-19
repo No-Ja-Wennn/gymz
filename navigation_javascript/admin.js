@@ -405,6 +405,7 @@ function loadTaskBarMessage() {
 
                         let displaytrash = optionElement;
                         let displaylist = optionElement.querySelector('.message__user__box__affter__list');
+                        // event.stopPropagation();
                         if (displaytrash.style.display === 'none' || displaytrash.style.display === '') {
                             console.log('show trash1')
                             displaytrash.style.display = 'flex';
@@ -422,7 +423,7 @@ function loadTaskBarMessage() {
                                 }, 350)
                             }, 50)
                         }
-
+                        
                         displayNoneAllOption();
                         if (optionElement.style.display == "block")
                             optionElement.style.display = "none"
@@ -523,6 +524,7 @@ function loadNewTaskBarMessage() {
 
                             let displaytrash = optionElement;
                             let displaylist = optionElement.querySelector('.message__user__box__affter__list');
+                            // event.stopPropagation();
                             if (displaytrash.style.display === 'none' || displaytrash.style.display === '') {
                                 console.log('show trash1')
                                 displaytrash.style.display = 'flex';
@@ -620,8 +622,10 @@ function displayNoneAllOption() {
         value.style.display = "none"
     })
 }
+
 let lastestIconOptionMessage;
 let showNowRemoveElement;
+
 document.addEventListener('click', function (event) {
     // var myElement = document.getElementById('myElement');
     if (lastestIconOptionMessage && showNowRemoveElement)
@@ -629,10 +633,18 @@ document.addEventListener('click', function (event) {
             var a_optionElement = document.querySelectorAll(".message__user__box__affter")
             a_optionElement = Array.from(a_optionElement)
             a_optionElement.map(value => {
-                value.style.display = "none"
+                console.log('hide click tum lum');
+                displaylist.style.animation = 'hidelist .1s ease-in-out forwards';
+                setTimeout(function(){
+                value.style.animation = 'hidetrash .35s ease-in-out forwards';
+                    setTimeout(function(){
+                        value.style.display = 'none';
+                    }, 350)
+                }, 50)
             })
         }
 });
+
 // check save on active // khongbiet vie t gi day nua
 function checkValidSave(valueActive, flagConsole = true) {
     if (doingForm == valueActive || doingForm == "") {
