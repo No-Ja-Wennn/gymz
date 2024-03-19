@@ -341,7 +341,6 @@ window.onload = function () {
         }
     }
     loadTaskBarMessage();
-
 }
 
 function loadTaskBarMessage() {
@@ -369,37 +368,45 @@ function loadTaskBarMessage() {
                     liElement = document.createElement("li");
                     liElement.className = "message__user";
                     liElement.innerHTML = `
-                <div class="message__user__box">
-                <img src="/img/icon/avatar__ico.jpg" alt="" class="message__user__avt">
-                    <div class="message__user__box__right">
-                        <span class="message__user__name">
+                        <div class="message__user__box">
+                        <img src="/img/icon/ico-avt.png" alt="" class="message__user__avt">
+                        <div class="message__user__box__right">
+                            <span class="message__user__name">
                             ${loginData.accounts[j].name}
-                        </span>
-                        <span class="message__user__msg">
-                            <span class="message__user__msg__obj">id: </span>
-                            <div class="message__user__msg__text">${historyMessage.messages[i].id}</div>
-                        </span>
+                            </span>
+                            <span class="message__user__msg">
+                                <span class="message__user__msg__obj">ID: </span>
+                                <div class="message__user__msg__text">${historyMessage.messages[i].id}</div>
+                            </span>
+                        </div>
+                        <div class="more-option">
+                            <i class="message__user__name__options fa-solid fa-ellipsis"></i>
+                        </div>
                     </div>
-                    <i class="message__user__name__options fa-solid fa-ellipsis"></i>
-                </div>
-                <div class="message__user__box__affter">
-                    <ul class="message__user__box__affter__list">
-                        <li class="message__user__box__affter__item">Xóa đoạn chat</li>
-                    </ul>
-                </div>
+                    <div class="message__user__box__affter">
+                        <ul class="message__user__box__affter__list">
+                            <li class="message__user__box__affter__item">
+                                Xóa
+                                <span>
+                                    <i class="fa-solid fa-trash"></i>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
                 `
                     liElement.addEventListener("click", handleClick);
                     messageList.appendChild(liElement);
                     var iconOptionMessage = liElement.querySelector(".message__user__name__options");
                     iconOptionMessage.addEventListener("click", function () {
                         lastestIconOptionMessage = this
-                        var optionElement = this.parentElement.parentElement.querySelector(".message__user__box__affter");
+                        console.log(this)
+                        var optionElement = this.parentElement.parentElement.parentElement.querySelector(".message__user__box__affter");
                         showNowRemoveElement = optionElement
                         displayNoneAllOption();
                         if (optionElement.style.display == "block")
                             optionElement.style.display = "none"
                         else
-                            optionElement.style.display = "block"
+                            optionElement.style.display = "flex"
 
                         var removeMessageElement = showNowRemoveElement.querySelector(".message__user__box__affter__item")
                         removeMessageElement.addEventListener("click", () => {
@@ -454,22 +461,29 @@ function loadNewTaskBarMessage() {
                         var liElement = document.createElement("li");
                         liElement.className = "message__user";
                         liElement.innerHTML = `
-                    <div class="message__user__box">
-                    <img src="/img/icon/avatar__ico.jpg" alt="" class="message__user__avt">
+                        <div class="message__user__box">
+                        <img src="/img/icon/ico-avt.png" alt="" class="message__user__avt">
                         <div class="message__user__box__right">
                             <span class="message__user__name">
-                                ${loginData.accounts[j].name}
+                            ${loginData.accounts[j].name}
                             </span>
                             <span class="message__user__msg">
-                                <span class="message__user__msg__obj">id: </span>
+                                <span class="message__user__msg__obj">ID: </span>
                                 <div class="message__user__msg__text">${historyMessage.messages[i].id}</div>
                             </span>
                         </div>
-                        <i class="message__user__name__options fa-solid fa-ellipsis"></i>
+                        <div class="more-option">
+                            <i class="message__user__name__options fa-solid fa-ellipsis"></i>
+                        </div>
                     </div>
                     <div class="message__user__box__affter">
                         <ul class="message__user__box__affter__list">
-                            <li class="message__user__box__affter__item">Xóa đoạn chat</li>
+                            <li class="message__user__box__affter__item">
+                                Xóa
+                                <span>
+                                    <i class="fa-solid fa-trash"></i>
+                                </span>
+                            </li>
                         </ul>
                     </div>
                     `
@@ -478,7 +492,7 @@ function loadNewTaskBarMessage() {
                         var iconOptionMessage = liElement.querySelector(".message__user__name__options");
                         iconOptionMessage.addEventListener("click", function () {
                             lastestIconOptionMessage = this
-                            var optionElement = this.parentElement.parentElement.querySelector(".message__user__box__affter");
+                            var optionElement = this.parentElement.parentElement.parentElement.querySelector(".message__user__box__affter");
                             showNowRemoveElement = optionElement
                             displayNoneAllOption();
                             if (optionElement.style.display == "block")
@@ -2372,3 +2386,4 @@ function f_exitSearch() {
     searchMessageInput.value = ""
     exitSearch.removeEventListener("click", f_exitSearch);
 }
+
