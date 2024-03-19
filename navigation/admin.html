@@ -190,8 +190,8 @@
                 <div class="container__show">
 
                     <!-- MESSAGE -->
-                    <div class="container__show__message">
-                        <div class="container__show__message__box">
+                    <div id="groupList" class="container__show__message">
+                        <div id="listItem" class="container__show__message__box">
                             <div class="list-message-box">
                                 <div class="box-title">
                                     <div class="navigation-display">
@@ -200,11 +200,14 @@
                                             <!-- <i class="fa-solid fa-xmark"></i> -->
                                         </button>
                                     </div>
-                                    <h3 class="list-message-box__title">
+                                    <h3 class="title-row">
                                         Đoạn chat
                                     </h3>
                                     <div class="sub-middle">
-                                        <span>s</span>
+                                        <button id="next" class="slide-right">
+                                            <ion-icon name="chevron-forward-sharp">
+                                            </ion-icon>
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="list-message-box__search">
@@ -278,6 +281,12 @@
                             </div>
                             <div class="chatbox">
                                 <div class="chatbox__head">
+                                    <div class="first-item">
+                                        <button id="prve" class="slide-left">
+                                            <ion-icon name="chevron-back-sharp">
+                                            </ion-icon>
+                                        </button>
+                                    </div>
                                     <div class="user-img">
                                         <img src="/img/icon/ico-avt.png" alt="" class="message__user__avt">
                                     </div>
@@ -323,16 +332,29 @@
 
                     <!-- ACCOUNT -->
                     <div class="container__show__account">
-                        <div class="container__show__add container__show__account__add">
-                            <div class="box-title">
-                                <div class="navigation-display">
-                                    <button class="navigation-display-button"><i class="fa-solid fa-bars"></i></button>
+                        <div class="container-select">
+                            <div class="container__show__add container__show__account__add">
+                                <div class="box-title">
+                                    <div class="navigation-display">
+                                        <button class="navigation-display-button"><i class="fa-solid fa-bars"></i></button>
+                                    </div>
+                                    <h3 class="title-row">
+                                        Quản lý tài khoản
+                                    </h3>
+                                    <div class="sub-middle">
+                                        <span>s</span>
+                                    </div>
                                 </div>
-                                <h3 class="list-message-box__title">
-                                    Quản lý tài khoản
-                                </h3>
-                                <div class="sub-middle">
-                                    <span>s</span>
+                            </div>
+                            <div class="container__show__head">
+                                <div class="container__show__head__input__box">
+                                    <i class="exit--search fa-solid fa-arrow-left"></i>
+                                    <input class="show__input__id" type="text" oninput="findByIDAccount(this)"
+                                        placeholder="Nhập mã thẻ của khách hàng">
+                                    <div class="show__find__id__box"></div>
+                                </div>
+                                <div class="head-end">
+                                    <button class="container__show__find__btn">Tìm kiếm</button>
                                 </div>
                                 <button id="add-account"
                                     class="container__show__add__btn container__show__account__add__btn"
@@ -340,33 +362,22 @@
                                     Thêm tài khoản
                                 </button>
                             </div>
-                        </div>
-                        <div class="container__show__head">
-                            <div class="container__show__head__input__box">
-                                <i class="exit--search fa-solid fa-arrow-left"></i>
-                                <input class="show__input__id" type="text" oninput="findByIDAccount(this)"
-                                    placeholder="Nhập mã thẻ của khách hàng">
-                                <div class="show__find__id__box"></div>
+                            <!-- <i class="remove-icon fa-solid fa-trash"></i> -->
+                            <div class="container__show__content">
+                                <table class="table__show table__show__main">
+                                    <tr class="tr__show">
+                                        <th class="th__show">ID</th>
+                                        <th class="th__show">USERNAME</th>
+                                        <th class="th__show">EMAIL</th>
+                                        <th class="th__show">PASSWORD</th>
+                                        <th class="th__show"></th>
+                                    </tr>
+                                </table>
                             </div>
-                            <div class="head-end">
-                                <button class="container__show__find__btn">Tìm kiếm</button>
+                            <div class="save__box">
+                                <span class="save__message"></span>
+                                <button class="save-btn" onclick="saveAccount()">Lưu</button>
                             </div>
-                        </div>
-                        <!-- <i class="remove-icon fa-solid fa-trash"></i> -->
-                        <div class="container__show__content">
-                            <table class="table__show table__show__main">
-                                <tr class="tr__show">
-                                    <th class="th__show">ID</th>
-                                    <th class="th__show">USERNAME</th>
-                                    <th class="th__show">EMAIL</th>
-                                    <th class="th__show">PASSWORD</th>
-                                    <th class="th__show"></th>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="save__box">
-                            <span class="save__message"></span>
-                            <button class="save-btn" onclick="saveAccount()">Lưu</button>
                         </div>
                     </div>
 
@@ -380,7 +391,7 @@
                                         <!-- <i class="fa-solid fa-xmark"></i> -->
                                     </button>
                                 </div>
-                                <h3 class="list-message-box__title">
+                                <h3 class="title-row">
                                     Quản lý thẻ thành viên
                                 </h3>
                                 <div class="sub-middle">
@@ -536,6 +547,8 @@
     </div>
 
     <div class="nen_mo"></div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="../navigation_javascript/admin.js"></script>
     <script src="../navigation_javascript/menuv2.js"></script>
     <script src="/navigation_javascript/app.js"></script>

@@ -13,7 +13,7 @@ shadow.addEventListener('click', function(event) {
         btshow.innerHTML = '<i class="fa-solid fa-bars"></i>';
         shadow.style.display = 'none';
     }, 500);
-
+})
 btshow.forEach(button => {
     button.addEventListener('click', function(event) {
         console.log('show');
@@ -37,7 +37,7 @@ bthide.addEventListener('click', function(event) {
     }, 500);
 })
     
-})
+
 
 
 const bttrash = document.querySelectorAll('.more-option i');
@@ -70,6 +70,7 @@ bttrash.forEach(button => {
 })
 
 
+// xu ly khi click ra ngoai nut 3 cham
 document.addEventListener('click', function(){
     if(displaytrash.style.display === 'flex'){
         console.log('hide click tum lum')
@@ -85,17 +86,90 @@ document.addEventListener('click', function(){
 
 
 
+
+
+
+//animation xoa tin nhan
 const deletechat = document.querySelector('.message__user__box__affter__item');
 
 deletechat.addEventListener('click', function(){
     const chat_active = document.querySelector('.message__user--active1');
-    chat_active.style.animation = 'side-to-left .35s ease-in-out forwards';
-    // chat_active.style.animation = 'de-height .5s ease-in-out forwards';
+    chat_active.style.animation = 'side-to-left .25s ease-in-out forwards';
     setTimeout(function(){
-        chat_active.style.animation = 'de-height .35s ease-in-out forwards';
+        chat_active.style.animation = 'de-height .25s ease-in-out forwards';
         setTimeout(function(){
-            // xoa o day nay
-        }, 500)
-    }, 350)
+            chat_active.style.display = 'none';
+        }, 250)
+    }, 250)
     console.log('delete');
 });
+
+
+
+// document.getElementById('next').onclick = function(){
+//     const widthItem = document.querySelector('.chatbox').offsetWidth;
+//     document.getElementById('groupList').scrollLeft += widthItem;
+// };
+// document.getElementById('prve').onclick = function(){
+//     const widthItem = document.querySelector('.chatbox').offsetWidth;
+//     document.getElementById('groupList').scrollLeft -= widthItem;
+// };
+
+
+
+function scrollRight() {
+    const widthItem = document.querySelector('.chatbox').offsetWidth;
+    document.getElementById('groupList').scrollLeft += widthItem;
+}
+
+function scrollLeft() {
+    const widthItem = document.querySelector('.chatbox').offsetWidth;
+    document.getElementById('groupList').scrollLeft -= widthItem;
+}
+
+document.getElementById('next').onclick = scrollRight;
+document.getElementById('prve').onclick = scrollLeft;
+
+
+
+// // Biến để theo dõi trạng thái của vòng lặp
+// let isScrollingRight = true;
+// // Thiết lập vòng lặp vô tận để gọi hàm
+// setInterval(function() {
+//     if (isScrollingRight) {
+//         scrollRight();
+//     } else {
+//         scrollLeft();
+//     }
+//     isScrollingRight = !isScrollingRight; // Đảo ngược trạng thái sau mỗi lần gọi hàm
+// }, 2000); // Thực hiện sau mỗi 3 giây
+
+
+
+
+// let touchTimer; // Biến để lưu trữ thời gian giữ touch
+// const element = document.querySelectorAll('.message__user');
+
+// element.forEach(button => {
+//     button.addEventListener('touchstart', function(event) {
+//         touchTimer = setTimeout(function() {
+//             // Thực hiện hành động khi giữ touch trong thời gian mong muốn
+//             // console.log('Touch and hold event detected!');
+//             console.log('show trash1')
+//                 displaytrash.style.display = 'flex';
+//                 displaytrash.style.animation = 'showtrash .35s ease-in-out forwards';
+//                 setTimeout(function(){
+//                     displaylist.style.animation = 'showlist .1s ease-in-out forwards';
+//                 }, 250)
+//         }, 600); // 1000 miliseconds = 1 giây (thay đổi thời gian tùy ý)
+//     });
+    
+// })
+
+
+
+
+// element.addEventListener('touchend', function(event) {
+//     clearTimeout(touchTimer); // Hủy timer nếu người dùng nhấc tay ra trước khi hết thời gian
+//     console.log('cancel Touch and hold');
+// });

@@ -228,6 +228,16 @@ function activeLogin() {
                 itemsBox[j].classList.remove('container__bar__item--active');
             }
             this.classList.add('container__bar__item--active');
+            setTimeout(function(){
+                console.log('hide');
+                navigation.style.animation = 'fly-out-left .35s ease-in-out forwards';
+                shadow.style.animation = 'shadow-out .35s ease-in-out forwards';
+                setTimeout(function() {
+                    navigation.style.display = 'none';
+                    btshow.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                    shadow.style.display = 'none';
+                }, 500);
+            }, 500);
         });
     }
     messageForm.style.display = "block";
@@ -605,14 +615,13 @@ function handleClick() {
     a_liE = Array.from(a_liE)
     a_liE.map(value => { value.classList.remove("message__user--active1") })
     this.classList.add("message__user--active1");
-    console.log('active')
     var titleUser = document.querySelector(".chatbox__head__title");
-    titleUser.innerText = this.querySelector(".message__user__name").innerText
-
-
-
-
-
+    titleUser.innerText = this.querySelector(".message__user__name").innerText;
+    console.log('show message');
+    setTimeout(function(){
+        scrollRight();
+    }, 200);
+    // scrollRight();
 }
 
 function displayNoneAllOption() {
