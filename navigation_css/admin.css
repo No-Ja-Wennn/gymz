@@ -782,7 +782,7 @@ li.message__user.message__user:hover .message__user__name__options {
     padding: 8px;
     height: 70px;
     width: 100%;
-    font-size: 14px;
+    font-size: 12px;
 }
 .show__find__id__box {
     position: absolute;
@@ -818,17 +818,26 @@ li.message__user.message__user:hover .message__user__name__options {
 }
 
 .show__input__package {
-    height: 34px;
-    font-size: 16px;
+    height: auto;
+    border: unset;
+    background-color: rgb(223, 223, 223);
+    border-radius: 5px;
+    /* font-size: 14px; */
+    padding: 0px 8px;
     margin-right: 12px;
-
+}
+.show__input__package option {
+    background-color: #ffffff;
 }
 
 .show__input__date {
-    height: 34px;
+    height: auto;
+    border: unset;
+    background-color: rgb(223, 223, 223);
+    border-radius: 5px;
     /* font-size: 16px; */
-    padding: 8px 6px 6px;
-    margin-right: 12px;
+    padding: 0px 8px;
+    margin-right: 10px;
 }
 
 .head-end {
@@ -836,20 +845,26 @@ li.message__user.message__user:hover .message__user__name__options {
     display: flex;
     justify-content: flex-start;
 }
-#add-account {
+#add-account,
+#add-card,
+#add-calendar {
     /* margin-left: 12px; */
     /* height: 34px; */
     /* font-size: 12px; */
+    min-width: 96px;
     font-weight: 500;
     padding: 5px 8px;
     background-color: rgb(230, 230, 230);
     border-radius: 4px;
     border: 0px rgba(0, 0, 0, 0.5) solid;
     cursor: pointer;
+    margin-left: 10px;
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
 }
 
-#add-account:hover {
+#add-account:hover,
+#add-card:hover,
+#add-calendar:hover {
     background-color: rgb(199, 199, 199);
 }
 
@@ -866,6 +881,7 @@ li.message__user.message__user:hover .message__user__name__options {
     position: relative;
     min-width: 35%;
     margin-right: 10px;
+    font-size: 12px;
     /* background-color: rgb(230, 230, 230); */
 }
 
@@ -884,6 +900,7 @@ li.message__user.message__user:hover .message__user__name__options {
 .container__show__find__btn {
     display: block;
     width: auto;
+    min-width: 64px;
     height: auto;
     /* font-size: 12px; */
     font-weight: 500;
@@ -956,7 +973,7 @@ li.message__user.message__user:hover .message__user__name__options {
     text-align: center;
     vertical-align: middle;
     background-color: #ffffff;
-    font-size: 14px !important;
+    font-size: 12px;
     font-weight: 500;
     padding: 5px;
 }
@@ -993,16 +1010,15 @@ th.th__show{
     display: flex;
     text-align: center;
     width: 100%;
-    height: 32px;
-    font-size: 16px;
+    font-size: 12px;
     border: none;
     outline: none;
     background-color: transparent;
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 
 .inputAdd::placeholder {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 
@@ -1012,11 +1028,11 @@ th.th__show{
     align-items: flex-end;
     justify-content: flex-end;
     width: 100%;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .save__box span {
-    font-size: 14px;
+    font-size: 12px;
     color: rgb(243, 232, 31);
     margin-right: 22px;
 }
@@ -1025,7 +1041,7 @@ th.th__show{
     /* font-size: 12px; */
     font-weight: 500;
     background-color: rgb(230, 230, 230);
-    padding: 8px 8px 4px;
+    padding: 5px 8px;
     border-radius: 4px;
     border: 0px solid #666;
 }
@@ -1035,29 +1051,35 @@ th.th__show{
 }
 
 
+.container__show__content {
+    overflow-x: auto; /* Thêm thanh cuộn ngang khi cần */
+    scroll-behavior: smooth;
+}
+.container__show__content::-webkit-scrollbar{
+    /* display: none; */
+    opacity: 0;
+}
+.table__show__main {
+    /* Đặt chiều ngang nhỏ nhất là 800px */
+    /* min-width: 500px;  */
+    /* Chiếm đủ chiều ngang cần thiết, không co giãn quá */
+    /* width: max-content;  */
+    white-space: nowrap; /* Ngăn các cột trong bảng tự động xuống dòng */
+}
+/* Thêm padding để dữ liệu không bị gần sát nhau */
+/* .th__show, .td__show {
+    padding: 8px; 
+} */
+
+
 .error {
     display: none;
 }
 
-/* @media screen and (max-width: 1024px) {
-    .app{
-        display: none;
+@media screen and (max-width: 1200px) {
+    .table__show__main{
+        min-width: 1200px;
     }
-    .error{
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .error p{
-        display: flex;
-        font-size: 100px;
-    }
-} */
-
-@media screen and (max-width: 1024px) {
-
 }
 
 @media screen and (max-width: 768px) {
@@ -1095,37 +1117,33 @@ th.th__show{
         height: auto;
         font-size: 14px;
     }
-    /* #add-account{
-        font-size: 16px;
-        height: unset;
-    } */
-    .th__show:nth-child(1){
-        width: fit-content;
+    .container__show__head{
+        font-size: 10px;
     }
-
+    .table__show{
+        min-width: 900px;
+    }
     .table__show, .th__show, .td__show {
-        overflow-wrap: break-word;
-        text-align: center;
-        vertical-align: middle;
         font-size: 10px;
-
-    }
-
-    .th__show {
-        font-size: 10px;
-        font-weight: 600;
-        line-height: unset;
-        /* padding: 8px 4px; */
-    }
-    .tr__show .th__show:last-child{
-        width: fit-content;
     }
     .inputAdd{
         font-size: 10px;
-        background-color: white;
-        color: black;
+    }
+    .save__box{
+        font-size: 10px;
     }
 }
-@media screen and (max-width: 360px){
-    
+@media screen and (max-width: 390px){
+    .container__show__head{
+        font-size: 9px;
+    }
+    .table__show, .th__show, .td__show {
+        font-size: 9px;
+    }
+    .inputAdd{
+        font-size: 9px;
+    }
+    .save__box{
+        font-size: 9px;
+    }
 }
