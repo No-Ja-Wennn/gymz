@@ -881,7 +881,7 @@ li.message__user.message__user:hover .message__user__name__options {
     position: relative;
     min-width: 35%;
     margin-right: 10px;
-    font-size: 12px;
+    /* font-size: 12px; */
     /* background-color: rgb(230, 230, 230); */
 }
 
