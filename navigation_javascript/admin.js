@@ -599,7 +599,8 @@ function handleClick() {
     userActive = idBox;
     loadMessage();
     var a_liE = document.querySelectorAll(".message__user");
-    a_liE = Array.from(a_liE)
+    a_liE = Array.from(a_liE);
+
     a_liE.map(value => { value.classList.remove("message__user--active") })
     this.classList.add("message__user--active");
 
