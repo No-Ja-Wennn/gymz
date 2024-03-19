@@ -557,7 +557,7 @@ li.message__user.message__user:hover .message__user__name__options{
     display: flex;
     justify-content: flex-end;
     margin-right: 20px;
-    /* opacity: 0; nếu thay được thì bật cmt này lên ==================================== */
+    opacity: 0;
     list-style: none;
     padding: 0;
     margin: 0;

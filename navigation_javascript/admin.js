@@ -402,6 +402,27 @@ function loadTaskBarMessage() {
                         console.log(this)
                         var optionElement = this.parentElement.parentElement.parentElement.querySelector(".message__user__box__affter");
                         showNowRemoveElement = optionElement
+
+                        let displaytrash = optionElement;
+                        let displaylist = optionElement.querySelector('.message__user__box__affter__list');
+                        if (displaytrash.style.display === 'none' || displaytrash.style.display === '') {
+                            console.log('show trash1')
+                            displaytrash.style.display = 'flex';
+                            displaytrash.style.animation = 'showtrash .35s ease-in-out forwards';
+                            setTimeout(function () {
+                                displaylist.style.animation = 'showlist .1s ease-in-out forwards';
+                            }, 250)
+                        } else {
+                            console.log('hide trash2')
+                            displaylist.style.animation = 'hidelist .1s ease-in-out forwards';
+                            setTimeout(function () {
+                                displaytrash.style.animation = 'hidetrash .35s ease-in-out forwards';
+                                setTimeout(function () {
+                                    displaytrash.style.display = 'none';
+                                }, 350)
+                            }, 50)
+                        }
+
                         displayNoneAllOption();
                         if (optionElement.style.display == "block")
                             optionElement.style.display = "none"
@@ -499,6 +520,26 @@ function loadNewTaskBarMessage() {
                                 optionElement.style.display = "none"
                             else
                                 optionElement.style.display = "block";
+
+                            let displaytrash = optionElement;
+                            let displaylist = optionElement.querySelector('.message__user__box__affter__list');
+                            if (displaytrash.style.display === 'none' || displaytrash.style.display === '') {
+                                console.log('show trash1')
+                                displaytrash.style.display = 'flex';
+                                displaytrash.style.animation = 'showtrash .35s ease-in-out forwards';
+                                setTimeout(function () {
+                                    displaylist.style.animation = 'showlist .1s ease-in-out forwards';
+                                }, 250)
+                            } else {
+                                console.log('hide trash2')
+                                displaylist.style.animation = 'hidelist .1s ease-in-out forwards';
+                                setTimeout(function () {
+                                    displaytrash.style.animation = 'hidetrash .35s ease-in-out forwards';
+                                    setTimeout(function () {
+                                        displaytrash.style.display = 'none';
+                                    }, 350)
+                                }, 50)
+                            }
 
                             var removeMessageElement = showNowRemoveElement.querySelector(".message__user__box__affter__item")
                             removeMessageElement.addEventListener("click", () => {
