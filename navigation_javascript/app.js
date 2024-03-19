@@ -115,3 +115,16 @@ bttrash.addEventListener('click', function(){
         }, 50)
     }
 })
+
+
+
+const deletechat = document.querySelector('.message__user__box__affter__item');
+
+deletechat.addEventListener('click', function(){
+    const chat_active = document.querySelector('.message__user--active1');
+    chat_active.style.animation = 'side-to-left .25s ease-in-out forwards';
+    setTimeout(function(){
+        chat_active.style.animation = 'de-height .25s ease-in-out forwards';
+    }, 250)
+    console.log('delete');
+});

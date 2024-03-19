@@ -543,8 +543,9 @@ function activeFirstMessage() {
             loadMessage();
             var a_liE = document.querySelectorAll(".message__user");
             a_liE = Array.from(a_liE)
-            a_liE.map(value => { value.classList.remove("message__user--active") })
-            listMessageTitle[0].classList.add("message__user--active");
+            a_liE.map(value => { value.classList.remove("message__user--active1") })
+            listMessageTitle[0].classList.add("message__user--active1");
+            
 
 
             var titleUser = document.querySelector(".chatbox__head__title");
@@ -559,11 +560,16 @@ function handleClick() {
     loadMessage();
     var a_liE = document.querySelectorAll(".message__user");
     a_liE = Array.from(a_liE)
-    a_liE.map(value => { value.classList.remove("message__user--active") })
-    this.classList.add("message__user--active");
-
+    a_liE.map(value => { value.classList.remove("message__user--active1") })
+    this.classList.add("message__user--active1");
+    console.log('active')
     var titleUser = document.querySelector(".chatbox__head__title");
     titleUser.innerText = this.querySelector(".message__user__name").innerText
+
+
+
+
+
 }
 
 function displayNoneAllOption() {
