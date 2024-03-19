@@ -92,26 +92,26 @@ bthide.addEventListener('click', function(event) {
 // });
 
 
-const bttrash = document.querySelector('.more-option i');
-const displaytrash = document.querySelector('.message__user__box__affter');
-const displaylist = document.querySelector('.message__user__box__affter__list');
+// let bttrash = document.querySelector('.more-option i');
+// let displaytrash = document.querySelector('.message__user__box__affter');
+// let displaylist = document.querySelector('.message__user__box__affter__list');
 
-bttrash.addEventListener('click', function(){
-    if (displaytrash.style.display === 'none' || displaytrash.style.display === ''){
-        console.log('show trash1')
-        displaytrash.style.display = 'flex';
-        displaytrash.style.animation = 'showtrash .35s ease-in-out forwards';
-        setTimeout(function(){
-            displaylist.style.animation = 'showlist .1s ease-in-out forwards';
-        }, 250)
-    }else{
-        console.log('hide trash2')
-        displaylist.style.animation = 'hidelist .1s ease-in-out forwards';
-        setTimeout(function(){
-            displaytrash.style.animation = 'hidetrash .35s ease-in-out forwards';
-            setTimeout(function(){
-                displaytrash.style.display = 'none';
-            }, 350)
-        }, 50)
-    }
-})
+// bttrash.addEventListener('click', function(){
+    // if (displaytrash.style.display === 'none' || displaytrash.style.display === ''){
+    //     console.log('show trash1')
+    //     displaytrash.style.display = 'flex';
+    //     displaytrash.style.animation = 'showtrash .35s ease-in-out forwards';
+    //     setTimeout(function(){
+    //         displaylist.style.animation = 'showlist .1s ease-in-out forwards';
+    //     }, 250)
+    // }else{
+    //     console.log('hide trash2')
+    //     displaylist.style.animation = 'hidelist .1s ease-in-out forwards';
+    //     setTimeout(function(){
+    //         displaytrash.style.animation = 'hidetrash .35s ease-in-out forwards';
+    //         setTimeout(function(){
+    //             displaytrash.style.display = 'none';
+    //         }, 350)
+    //     }, 50)
+    // }
+// })
