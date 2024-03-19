@@ -72,6 +72,7 @@ bttrash.forEach(button => {
 
 // xu ly khi click ra ngoai nut 3 cham
 document.addEventListener('click', function(){
+    if(displaytrash)
     if(displaytrash.style.display === 'flex'){
         console.log('hide click tum lum')
         displaylist.style.animation = 'hidelist .1s ease-in-out forwards';
@@ -91,7 +92,7 @@ document.addEventListener('click', function(){
 
 //animation xoa tin nhan
 const deletechat = document.querySelector('.message__user__box__affter__item');
-
+if(deletechat)
 deletechat.addEventListener('click', function(){
     const chat_active = document.querySelector('.message__user--active1');
     chat_active.style.animation = 'side-to-left .25s ease-in-out forwards';
