@@ -434,6 +434,10 @@ function loadTaskBarMessage() {
                             }, 50)
                         }
                         
+
+                        // ẩn thanh xóa
+                        console.log("hẹllo")
+
                         displayNoneAllOption();
                         if (optionElement.style.display == "block")
                             optionElement.style.display = "none"
