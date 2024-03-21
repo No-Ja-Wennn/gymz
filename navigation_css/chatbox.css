@@ -62,6 +62,7 @@ i.fa-solid.fa-caret-up{
     z-index: 1;
 }
 .user-about{
+    /* max-height: 45px; */
     padding: 5px;
     width: fit-content;
     display: flex;
@@ -95,6 +96,7 @@ i.fa-solid.fa-caret-up{
     justify-content: center;
     position: relative;
     min-height: 40px;
+    max-height: 40px;
 }
 .chatbox__head__title {
     font-size: 1.5rem;

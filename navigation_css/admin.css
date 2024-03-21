@@ -323,6 +323,9 @@
 .sub-middle{
     opacity: 0;
 }
+.first-item{
+    display: none;
+}
 .navigation-display-button,
 .slide-right,
 .slide-left {
@@ -1128,9 +1131,11 @@ th.th__show{
     } */
     .slide-right,
     .sub-middle {
-        opacity: 0;
+        opacity: 1;
     }
-
+    .first-item{
+        display: flex;
+    }
     .chatbox {
         width: unset;
         width: 100vw;
