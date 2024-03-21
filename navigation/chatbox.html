@@ -162,9 +162,20 @@
         <div class="container container--chat">
             <div class="chatbox">
                 <div class="chatbox__head">
-                    <h1 class="chatbox__head__title">CHAT BOX</h1>
-                    <div class="chatbox__head__active">
-                        <span class="chatbox__head__active__text">Đang hoạt động</span>
+                    <div class="user-about">
+                        <div class="user-img">
+                            <img src="/img/icon/ico-avt.png" alt="" class="message__user__avt">
+                        </div>
+                        <div class="user-ifm">
+                            <div class="chatbox__head__title">
+                                Nguyễn Thị Vân
+                            </div>
+                            <div class="chatbox__head__active">
+                                <span class="chatbox__head__active__text">
+                                    Đang hoạt động
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="chatbox__message">
@@ -181,23 +192,27 @@
                         <div class="chatbox__bottom__link-social__mess">
                             <a href="https://www.messenger.com/t/172967089240726/" class="chatbox__bottom__link-social__mess">
                                 <img class="messenger_ico" src="/img/icon/messenger_ico.png" alt="messenger">
-                                <ul class="sub">
-                                    <span>chat với chúng tôi</span>
-                                    <i class='bx bxs-down-arrow'></i>
-                                </ul>
                             </a>
                         </div>
                     </div>
                     <div class="chatbox__bottom__input">
-                        <!-- <input type="search" autocomplete="off"> -->
-                        <textarea id="myTextarea" rows="1" cols="20" placeholder="Aa"></textarea>
+                        <div class="chatbox-select">
+                            <div class="input-scroll">
+                                <div class="input-overflow">
+                                    <!-- <input type="search" autocomplete="off"> -->
+                                    <textarea id="myTextarea" rows="1" cols="20" placeholder="Aa"></textarea>
+                                    <!-- <i class='bx bxs-send' ></i> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chatbox__bottom__send">
                         <i class='bx bxs-send' ></i>
                     </div>
                 </div>
 
             </div>
         </div>
-
     </div>
     <div id="toast"></div>
 

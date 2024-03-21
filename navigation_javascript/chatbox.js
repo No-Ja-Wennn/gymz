@@ -1,3 +1,23 @@
+function autoResizeTextarea() {
+    const textarea = document.getElementById('myTextarea');
+    textarea.style.height = '17px';
+    textarea.style.height = `${textarea.scrollHeight}px`;
+}
+
+// Gọi hàm khi người dùng nhập văn bản
+document.getElementById('myTextarea').addEventListener('input', autoResizeTextarea);
+
+// Hàm để trả về kích thước chiều cao mặc định của textarea khi người dùng click vào sendbutton
+// function resetTextareaHeight() {
+//     const textarea = document.getElementById('myTextarea');
+//     textarea.style.height = '17px'; // Đặt lại chiều cao mặc định của textarea
+// }
+
+// // Gọi hàm resetTextareaHeight khi người dùng click vào sendbutton
+// sendButton.addEventListener('click', function(){
+//     textarea.style.height = '17px'; // Đặt lại chiều cao mặc định của textarea
+// });
+
 import { loadData } from './loadData.js';
 
 loadData();
@@ -9,8 +29,8 @@ const chatBoxMessage = document.querySelector('.chatbox__message');
 const chatBoxList = chatBoxMessage.querySelector('.chatbox__message__list');
 
 const inputBox = document.querySelector('.chatbox__bottom__input');
-const inputElement = inputBox.querySelector('textarea')
-const sendButton = inputBox.querySelector('i');
+const inputElement = inputBox.querySelector('textarea');
+const sendButton = document.querySelector('.chatbox__bottom__send i');
 
 let userActive = "other";
 
@@ -71,6 +91,9 @@ sendButton.addEventListener('click', async () => { // Thêm async vào đây
                 sendMessage(valueInput)
                 chatBoxMessage.scrollTop = chatBoxMessage.scrollHeight + 100;
                 inputElement.value = '';
+                setTimeout(function(){
+                    inputElement.style.height = '17px'; // Đặt lại chiều cao mặc định của textarea
+                }, 1);
             }
         }
     }else{

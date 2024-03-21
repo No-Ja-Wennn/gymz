@@ -678,18 +678,16 @@ li.message__user.message__user:hover .message__user__name__options {
 
 
 .chatbox {
-    /* flex: 10; */
     max-width: 100%;
     width: calc(100% - 320px);
-    /* width: calc(100% - 245px); */
-    box-shadow: none;
-    background-color: rgb(255, 255, 255);
+    /* box-shadow: none;
+    background-color: rgb(255, 255, 255); */
     border: none;
     border-left: 1px rgba(0, 0, 0, 0.05) solid;
-    border-right: 1px rgba(0, 0, 0, 0.05) solid;
+    /* border-right: 1px rgba(0, 0, 0, 0.05) solid; */
 }
 
-.chatbox__head {
+/* .chatbox__head {
     background-color: white;
     border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
     color: black;
@@ -697,9 +695,10 @@ li.message__user.message__user:hover .message__user__name__options {
     padding: 0;
     padding: 5px;
     margin-top: 8px;
-}
+    box-shadow: unset;
+} */
 
-.user-img {
+/* .user-img {
     display: flex;
     height: 64px;
     width: 64px;
@@ -710,9 +709,9 @@ li.message__user.message__user:hover .message__user__name__options {
     border-radius: 50rem;
     margin: 5px;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
-}
+} */
 
-.user-ifm {
+/* .user-ifm {
     height: 54px;
     display: flex;
     flex-direction: column;
@@ -731,9 +730,9 @@ li.message__user.message__user:hover .message__user__name__options {
 .chatbox__head__active {
     height: fit-content;
     margin: 0;
-}
+} */
 
-.chatbox__head__active::before {
+/* .chatbox__head__active::before {
     margin: 0;
     position: absolute;
     left: -22px;
@@ -741,21 +740,23 @@ li.message__user.message__user:hover .message__user__name__options {
     height: 10px;
     width: 10px;
     border: 2px white solid;
-}
+} */
 
-.chatbox__head__active__text {
+/* .chatbox__head__active__text {
     margin: 0;
     font-size: 11px;
-}
+} */
 
 .chatbox__message__item__text {
-    color: black;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: rgb(80, 80, 80);
+    color: white;
+    /* border: 1px solid rgba(0, 0, 0, 0.3); */
     font-size: 14px;
     padding: 6px 13px;
 }
 
 .chatbox__message__item__right span {
+    color: black;
     background-color: rgb(230, 230, 230);
     border: none;
     box-shadow: none;
@@ -766,12 +767,12 @@ li.message__user.message__user:hover .message__user__name__options {
     box-shadow: none;
 }
 
-.chatbox__bottom__input textarea {
+/* .chatbox__bottom__input textarea {
     border-color: transparent;
     background-color: #F2F3F5;
     color: rgba(0, 0, 0);
     height: auto;
-}
+} */
 
 
 
