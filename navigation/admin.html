@@ -358,14 +358,14 @@
                                         placeholder="Nhập mã thẻ của khách hàng">
                                     <div class="show__find__id__box"></div>
                                 </div>
-                                <div class="head-end">
+                                <div class="head-end" style="display: flex; justify-content: space-between;">
                                     <button class="container__show__find__btn">Tìm kiếm</button>
-                                </div>
-                                <button id="add-account"
+                                    <button id="add-account"
                                     class="container__show__add__btn container__show__account__add__btn"
                                     onclick="addAccount()">
                                     Thêm tài khoản
                                 </button>
+                                </div>
                             </div>
                             <!-- <i class="remove-icon fa-solid fa-trash"></i> -->
                             <div class="container__show__content">
@@ -415,7 +415,7 @@
                             </div>
                             <div class="head-end">
                                 <select class="show__input__package" id="packet" name="packet">
-                                    <option value="" disabled selected>Loại thành viên</option>
+                                    <option value="" disabled selected>Loại thẻ</option>
                                     <option value="BEGINNER">BEGINNER</option>
                                     <option value="BASIC">BASIC</option>
                                     <option value="ADVENCE">ADVENCE</option>
@@ -424,8 +424,9 @@
                                     placeholder="Ngày gia nhập">
                                 <input id="input-date-end" class="show__input__date" type="text"
                                     placeholder="Ngày hết hạn">
-                                <button class="container__show__find__btn container__show__card__find__btn">Tìm
-                                    kiếm</button>
+                                <button class="container__show__find__btn container__show__card__find__btn">
+                                    Tìm kiếm
+                                </button>
                             </div>
                         </div>
                         <!-- <i class="remove-icon fa-solid fa-trash"></i> -->
@@ -480,15 +481,16 @@
                                 </div>
                                 </table>
                             </div>
-                            <div class="head-end">
-                                <button class="container__show__find__btn container__show__calendar__find__btn">Tìm
-                                    kiếm</button>
+                            <div class="head-end" style="display: flex; justify-content: space-between;">
+                                <button class="container__show__find__btn container__show__calendar__find__btn">
+                                    Tìm kiếm
+                                </button>
+                                <button id="add-calendar"
+                                    class="container__show__add__btn container__show__calendar__add__btn"
+                                    onclick="addCalendar()">
+                                    Thêm lịch tập
+                                </button>
                             </div>
-                            <button id="add-calendar"
-                                class="container__show__add__btn container__show__calendar__add__btn"
-                                onclick="addCalendar()">
-                                Thêm lịch tập
-                            </button>
                         </div>
                         <!-- <i class="remove-icon fa-solid fa-trash"></i> -->
                         <div class="container__show__content container__show__calendar__content">
