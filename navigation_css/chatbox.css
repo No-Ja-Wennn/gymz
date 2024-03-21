@@ -1,7 +1,11 @@
 *{
     line-height: 1.5;
 }
-
+.app{
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+}
 i.fa-solid.fa-caret-up{
     position: absolute;
     top: 85%;
